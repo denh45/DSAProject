@@ -36,9 +36,9 @@ def dash():
     return render_template("Dashboard.html")
 
 
-@app.route("/karyl")
+@app.route("/index")
 def kkaryl():
-    return render_template("karyl.html")
+    return render_template("index.html")
 
 
 @app.route("/")
