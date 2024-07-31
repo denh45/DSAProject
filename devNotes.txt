@@ -1,0 +1,10 @@
+======================== GIT ==================
+git add .
+git commit -m "<message>"
+git push
+
+
+======================== ENV ==================
+
+install modules
+pip install -r requirements.txt
