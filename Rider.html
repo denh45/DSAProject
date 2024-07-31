@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: url('images/bonApp.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .image {
+            width: 40vw; 
+            height: auto;
+            margin-bottom: 20px; 
+        }
+
+        .info-text {
+            color: rgb(92, 71, 9); 
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .button {
+            padding: 5px 10px;
+            font-size: calc(0.8rem + 1.0vw);
+            border: 2px solid black;
+            color: black;
+            background-color: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px; 
+        }
+
+        .button:hover {
+            background-color: rgb(73, 39, 39);
+            color: white;
+        }
+
+        .buttons-container {
+            display: flex; 
+            gap: 50px; 
+        }
+    </style>
+    <title>Rider</title>
+</head>
+<body>
+    <div class="container">
+        <img src="images/rider.png" alt="Rider Image" class="image">
+        <div class="info-text">
+            Your order is being prepared. The rider will deliver it immediately
+        </div>
+        <div class="buttons-container">
+            <a href="Try3 - Homepage.html">
+                <button class="button" href="Try3 - Homepage.html"> Back to Menu</button>
+            </a>
+            <a href="Maps.html">
+                <button class="button" href="Try3 - Homepage.html"> Track Your Order </button>
+            </a>        
+        </div>
+    </div>
+</body>
+</html>

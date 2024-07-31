@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: url('images/bonApp.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .map {
+            width: 80vw; 
+            height: 50vh; 
+            margin-bottom: 20px;
+            border: 0;
+        }
+
+        .button {
+            padding: 5px 10px;
+            font-size: calc(0.8rem + 1.0vw);
+            border: 2px solid black;
+            color: black;
+            background-color: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .button:hover {
+            background-color: rgb(73, 39, 39);
+            color: white;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 50px; 
+        }
+    </style>
+    <title>Maps</title>
+</head>
+<body>
+    <div class="container">
+        
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7880.514972548038!2d121.32908602711963!3d14.2090961550989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b918d88a1f3d%3A0x58a027e55e27e3a1!2sLaguna%2C%20Philippines!5e0!3m2!1sen!2sin!4v1675968323087!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        <div class="buttons-container">
+            <a href="Try3 - Homepage.html">
+                <button class="button" href="Try3 - Homepage.html"> Back to Menu</button> 
+            </a>
+            <a href="Bon Appetit.html">
+                <button class="button" href="Try3 - Homepage.html"> Order Received </button>    
+            </a>   
+        </div>
+    </div>
+</body>
+</html>

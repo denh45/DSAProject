@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WELCOME PAGE</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;}
+        .background-container {
+            align-items: start;
+            background-image: url('images/desktop.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;}
+        /** NAVBAR **/
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 83px;
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 20px;
+            right: 0;
+            box-sizing: border-box;}
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;}
+        .navbar a:hover {
+            color: #f0a500;}
+        /** NAVBAR BUTTON**/
+        .navbar button {
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid #03045e;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease-in;
+            z-index: 1;
+            background-color: #00BFFF;
+            color: #FFFFFF;}
+        .navbar button::before,
+        .navbar button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 100%;
+            transform: skew(15deg);
+            transition: all 0.5s;
+            overflow: hidden;
+            z-index: -1;}
+        .navbar button::before {
+            left: -10px;
+            background: #5cd1f8;}
+        .navbar button::after {
+            right: -10px;
+            background: #20a0bc;}
+        .navbar button:hover::before,
+        .navbar button:hover::after {
+            width: 58%;}
+        .navbar button:hover span {
+            color: #e0aaff;
+            transition: 0.3s;}
+        .navbar button span {
+            color: #03045e;
+            font-size: 18px;
+            transition: all 0.3s ease-in;}
+        /** NAVBAR LOGO **/
+        .navbar .logo {
+            margin-right: auto;
+            max-height: 85px;
+            max-width: 170px;
+            padding-left: 25px;
+            height: auto;
+            width: auto;}
+
+        /** SIDENAV **/
+        .sidenav {
+            z-index: 1;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 250px;
+            padding-top: 20px;
+            transition: 0.3s;}
+        .sidenav a {
+            padding: 8px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: color 0.3s;}
+        .sidenav a:hover {
+            color: #f0a500;}
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;}
+
+        /** HOMPAGE TEXTS **/
+        .center-text {
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;}
+        .center-text h1 {
+            font-size: 60px;
+            margin: 0;
+            font-family: 'Lucida Handwriting', cursive;}
+        .center-text h2 {
+            font-size: 35px;
+            margin: 10px 0 0 0;}
+        .hungry-text {
+            font-size: 36px;}
+        .from-one-text {
+            font-size: 24px;}
+            
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: space-evenly;}
+            .navbar button {
+                display: none;}
+            .navbar a {
+                display: none;}
+            .navbar .menu-icon {
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                color: white;}
+            .center-text h1 {
+                font-size: 50px;}
+            .center-text h2 {
+                font-size: 25px;}
+            .hungry-text {
+                font-size: 28px;}
+            .from-one-text {
+                font-size: 20px;}
+        }
+
+        /* Media query for medium screens (e.g. tablets) */
+        @media only screen and (max-width: 768px) {
+            .hungry-text {
+                font-size: 28px;}
+            .from-one-text {
+                font-size: 20px;}
+        }
+        /* Media query for small screens (e.g. mobile phones) */
+        @media only screen and (max-width: 480px) {
+            .hungry-text {
+                font-size: 20px;}
+            .from-one-text {
+                font-size: 16px;}
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navbar -->
+    <div class="background-container">
+        <div class="navbar">
+            <img src="images/SF logo.png" alt="SF Logo" class="logo">
+            <a href="Try3 - Homepage.html">Home</a>
+            <a href="Order Burger.html">
+                <button type="button">Order Now</button>
+            </a>            <span class="menu-icon" style="padding-right: 30px;" onclick="openNav()">&#9776;</span>
+        </div>
+
+<!-- Sidenav-->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="Try3 - Homepage.html">Home</a>
+            <a href="Order Burger.html">Order Now</a>
+        </div>
+
+        <div class="center-text">
+            <h1>Welcome to Snap Food</h1>
+            <h2>Order your favorite food online</h2>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.display = "flex";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

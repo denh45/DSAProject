@@ -1,0 +1,165 @@
+h1, h2, h3, h4, h5, h6 {
+    color:rgb(231, 241, 237);
+    font-weight: 200;
+}
+
+p, blockquote {
+    color:antiquewhite;
+}
+
+.dropbox-icon {
+    padding: 0px 30px 20px;
+}
+
+.section-main {
+    background: #1e1919
+}
+
+.section-products {
+    background: #f7f5f2;
+    color: #1e1919;
+}
+
+.product-text {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.icon-name {
+    font-weight: 500;
+    
+}
+
+.learn-more-link {
+    color: #1e1919;
+    font-weight: 500;
+    font-size: medium;
+
+}
+
+.learn-more-link:hover {
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: large;
+}
+
+.dropbox-btn:hover {
+    background: rgb(201, 201, 226);
+    
+}
+
+.section-how {
+    background: #292121;
+}
+
+.section-help {
+    background: #f7f5f2;
+}
+
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%;
+}
+
+.responsive-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-connecting {
+    background: #292121;
+}
+
+.section-trusted {
+    background: #f7f5f2;
+}
+
+.stories-link {
+    text-decoration: underline;
+    text-align: center; 
+    font-size: 17px;
+}
+
+.slider-trusted {
+    background: #1e1919;
+}
+
+.slider .indicators .indicator-item,active {
+    background: blue;
+}
+
+.slides-col {
+    background: #1e1919 !important;
+}
+
+.slides-img {
+    height: 1000px !important;
+}
+
+.slides-image-one {
+    height: 1000px !important;
+    background: url('https://fjord.dropboxstatic.com/warp/conversion/dropbox/experience/en-us/drop-in-video-series/KingChildren_1920x1280.png?id=612f13ad-7264-48ac-9856-b60829cfc557&width=1024&output_type=webp');
+
+    background-size: 1000px;
+    background-position: right 35% bottom 100%;
+    background-repeat: no-repeat;
+}
+
+.slides-image-two {
+    height: 1000px !important;
+    background: url('https://fjord.dropboxstatic.com/warp/conversion/dropbox/dmep/assets/customer-success-stories/hope-gallery/hope_quote.png?id=d39e724d-e9b4-4bf9-b448-6b92200606bf&width=1024&output_type=webp');
+
+    background-size: 1000px;
+    background-position: right 35% bottom 100%;
+    background-repeat: no-repeat;
+}
+
+.special-option-one {
+    height: 1000px !important;
+    background: #ffafa5;
+}
+
+.special-option-two {
+    height: 1000px !important;
+    background: #fad24d;
+}
+
+.slides-content {
+    color: #1e1919;
+}
+
+.slides-link {
+    color: #1e1919;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.slides-link: hover {
+    text-decoration: underline dotted;
+
+}
+
+
+.section-last {
+    background:  #292121;
+}
+
+.last-more-link {
+    color: #c1a986; !important
+    font-weight: 500;
+    font-size: medium;
+}
+
+.last-more-link:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(241, 236, 236);
+    color:#c1a986;
+    font-weight: 600;
+    font-size: large;
+}

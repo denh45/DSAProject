@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#f7f7f7',
+                        'muted-foreground': '#606060',
+                        primary: '#007bff',
+                        'primary-foreground': '#ffffff',
+                        card: '#ffffff',
+                        secondary: '#28a745',
+                        'secondary-foreground': '#ffffff',
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="styleHPpg3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>SnapFood</title>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</head>
+
+<body class="bg-background text-muted-foreground">
+    <!-- Navbar -->
+    <div class="p-4 bg-white shadow">
+        <header class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">SnapFood</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-4">
+                    <li><a href="Order Burger.html" class="text-muted-foreground hover:text-primary">Menu</a></li>
+                    <li><a href="#aboutUsSection" class="text-muted-foreground hover:text-primary">About Us</a></li>
+                    <li><a href="#blogsSection" class="text-muted-foreground hover:text-primary">Blog</a></li>
+                    <li><a href="Maps.html" class="text-muted-foreground hover:text-primary">Track Order</a></li>
+                    <li><a href="Try1.html" class="bg-primary text-primary-foreground px-4 py-2 rounded">Log Out</a></li>
+                </ul>
+            </nav>
+            <span class="text-3xl cursor-pointer md:hidden" onclick="openNav()">&#9776;</span>
+        </header>
+    </div>
+
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav fixed h-full w-0 top-0 left-0 bg-black bg-opacity-75 overflow-x-hidden transition-width duration-300 z-50">
+        <a href="javascript:void(0)" class="closebtn absolute top-0 right-6 text-4xl text-white" onclick="closeNav()">&times;</a>
+        <a href="Order Burger.html" class="block py-4 px-8 text-white text-xl hover:bg-primary hover:text-primary-foreground">Menu</a>
+        <a href="#aboutUsSection" class="block py-4 px-8 text-white text-xl hover:bg-primary hover:text-primary-foreground">About Us</a>
+        <a href="#blogsSection" class="block py-4 px-8 text-white text-xl hover:bg-primary hover:text-primary-foreground">Blog</a>
+        <a href="Maps.html" class="block py-4 px-8 text-white text-xl hover:bg-primary hover:text-primary-foreground">Track Order</a>
+        <a href="Try1.html" class="block py-4 px-8 text-white text-xl hover:bg-primary hover:text-primary-foreground">Log Out</a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+        <img src="images/HP1.png" alt="Hero Image" class="w-full">
+    </div>
+
+    <!-- Popular Categories -->
+    <div class="p-4" style="background-color: #cedeea;">
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold" style="color:#543838"> SnapFood Popular Categories 🍽️</h2>
+        </section>
+        <div class="overflow-x-auto flex space-x-4 mb-8">
+            <a href="#" class="bg-card p-4 rounded-lg shadow-md flex-none w-48">
+                <img src="images/cmCake display.png" alt="Cheo Mint Cake" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Cheo Mint Cake</h3>
+                <a href="Order Cake.html" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded" style="background-color:#7d95a8">Order Now!</a>
+            </a>
+            <a href="#" class="bg-card p-4 rounded-lg shadow-md flex-none w-48">
+                <img src="images/salamanderSalad display.png" alt="Salamanders" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Salamanders</h3>
+                <a href="Order Veggies.html" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded" style="background-color:#7d95a8">Order Now!</a>
+            </a>
+            <a href="#" class="bg-card p-4 rounded-lg shadow-md flex-none w-48">
+                <img src="images/supremeBurger display.png" alt="Supreme Burger" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Supreme Burger</h3>
+                <a href="Order Burger.html" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded" style="background-color:#7d95a8">Order Now!</a>
+            </a>
+            <a href="#" class="bg-card p-4 rounded-lg shadow-md flex-none w-48">
+                <img src="images/meisanPizza display.png" alt="Meisan Pizza" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Meisan Pizza</h3>
+                <a href="Order Pizza.html" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded" style="background-color:#7d95a8">Order Now!</a>
+            </a>
+            <a href="#" class="bg-card p-4 rounded-lg shadow-md flex-none w-48">
+                <img src="images/shrimpSeafood display.png" alt="Classic Shrimp" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Classic Shrimp</h3>
+                <a href="Order Seafood.html" class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded" style="background-color:#7d95a8">Order Now!</a>
+            </a>
+        </div>
+    </div>
+
+    <!-- New Menu Released -->
+    <div style="background-color: #f0f0f0;" class="p-4 rounded-lg shadow-md m-4 overflow-x-auto">
+        <h2 class="text-xl font-semibold mb-2">New Menu Released</h2>
+        <div class="flex space-x-4">
+            <a href="#" class="flex-none w-48">
+                <img src="images/newpizza.png" alt="Pizza" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Pizza</h3>
+            </a>
+            <a href="#" class="flex-none w-48">
+                <img src="images/newseafood.png" alt="Shrimp" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Shrimp</h3>
+            </a>
+            <a href="#" class="flex-none w-48">
+                <img src="images/newcake.png" alt="Cake" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Cake</h3>
+            </a>
+            <a href="#" class="flex-none w-48">
+                <img src="images/newjuice.png" alt="Fruit" class="rounded-lg mb-2" />
+                <h3 class="font-semibold">Fruit</h3>
+            </a>
+        </div>
+    </div>
+
+    <!-- Discover More About Us -->
+    <div id="aboutUsSection" class="p-6" style="background-color: #cedeea;">
+        <h2 class="text-xl font-semibold" style="color:#543838"> Discover More About Us!</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">❓</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.memecreator.org%2Fmeme%2Fslide-into-my-dm-and-place-your-order%2F&psig=AOvVaw0bFHisWMyXB-RepvSARbBl&ust=1722480006395000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKjkpZyg0IcDFQAAAAAdAAAAABAc" target="_blank" rel="noopener noreferrer">How do I place an order? </a>
+                        </h3>
+                                                <p>Simple steps to place an order</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">📞</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fmemes%2Fcomments%2Fmqf3pi%2Fi_want_my_package%2F&psig=AOvVaw2yaHfxN_MAdP4oLFY-oTbj&ust=1722480456589000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOjMgfSh0IcDFQAAAAAdAAAAABAP" target="_blank" rel="noopener noreferrer">Where is my order? </a>
+                        </h3>
+                        <p>Tracking your order</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">⏰</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.webmonkey.com%2Fdoordash-memes%2F&psig=AOvVaw0keJ_EDdrq6R0gr_Uj9YVl&ust=1722480600385000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMjjkbyi0IcDFQAAAAAdAAAAABAJ" target="_blank" rel="noopener noreferrer">How long does delivery take? </a>
+                        </h3>                        
+                        <p>Information about delivery times</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">🔄</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fmeme%2Fcomments%2F181akfz%2Fis_it_stopping_anyone_anymore%2F&psig=AOvVaw1fkerNQRiez3JHg0K3G7BK&ust=1722480690551000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCLjm7-ei0IcDFQAAAAAdAAAAABAD" target="_blank" rel="noopener noreferrer">Can I cancle or change my order? </a>
+                        </h3>
+                        <p>Order cancellation and changes</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">🔔</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.memecreator.org%2Fmeme%2Foffice-hours-what-are-those&psig=AOvVaw178oBu_y3DGlrFn3dgfL3j&ust=1722481200328000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOCRndak0IcDFQAAAAAdAAAAABAI">What are your opening hours? </a>
+                        </h3>
+                        <p>Business hours information</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-card p-4 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <span class="text-primary text-2xl mr-2">🎟️</span>
+                    <div>
+                        <h3 class="font-semibold text-lg">
+                            <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2F9gag.com%2Fgag%2FaDjbNgN&psig=AOvVaw0bPMuh6dlI4b2Py9nkCB2U&ust=1722481243866000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCLCZru2k0IcDFQAAAAAdAAAAABAD">Do you offer any discounts? </a>
+                        </h3>                        
+                        <p>Details about available discounts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="p-6" style="background-color: #f9f9f9;">
+        <h2 class="text-xl font-semibold" style="color:#543838">Customer Reviews</h2>
+        <div class="space-y-4">
+            <div class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">Fyodor Dostoevsky</h3>
+                <p>"The Cheo Mint Cake transcends the human experience. It’s like Crime and Punishment but in dessert form—utterly divine."</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★★</span>
+                </div>
+            </div>
+            
+            <div class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">Nikola Tesla</h3>
+                <p>"A culinary marvel with the precision of my inventions. The food is electrifyingly good. Will definitely plug in for more."</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★☆</span>
+                </div>
+            </div>
+            
+            <div class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold">Ichiko Aoba</h3>
+                <p>"The burgers are so good they might just be a work of art. The speed of delivery matches their superb quality—A+ all the way!"</p>
+                <div class="flex items-center mt-2">
+                    <span class="text-yellow-500">★★★★★</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Our Blogs and Articles -->
+    <div id="blogsSection" class="p-6" style="background-color: #f0f4f8;">
+        <h2 class="text-xl font-semibold" style="color:#543838">Our Blogs and Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="https://supplychaingamechanger.com/the-ultimate-guide-for-online-shopping/" class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-lg">The Ultimate Guide to Ordering Online</h3>
+                <p class="text-muted-foreground">Discover tips and tricks for making the most out of your online food orders.</p>
+            </a>
+            <a href="Order Seafood.html" class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-lg">5 Must-Try Dishes from Our Menu</h3>
+                <p class="text-muted-foreground">Check out our top recommendations to satisfy your taste buds.</p>
+            </a>
+            <a href="https://otaokitchen.com.au/blog/learning/how-to-store-your-food-for-optimal-freshness-b202.html" class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-lg">How We Ensure Freshness in Every Meal</h3>
+                <p class="text-muted-foreground">Learn about our quality control processes and commitment to freshness.</p>
+            </a>
+            <a href="https://www.gordonramsay.com/" class="bg-card p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-lg">Behind the Scenes: Meet Our Chefs</h3>
+                <p class="text-muted-foreground">Get to know the talented chefs who prepare your favorite dishes.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #333333; color: #ffffff;" class="text-foreground p-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h1 class="text-3xl font-bold text-primary">SnapFood</h1>
+                <p class="text-muted-foreground mt-2">Embracing technology to shape a bright future for our company and our customers.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://twitter.com" target="_blank" class="text-muted-foreground hover:text-primary">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="text-muted-foreground hover:text-primary">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="text-muted-foreground hover:text-primary">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </div>                
+            </div>
+            <div>
+                <h2 class="font-semibold text-accent">Pages</h2>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">About</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Menu</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Pricing</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Blog</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Contact</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Delivery</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-semibold text-accent">Utility Pages</h2>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Start Here</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Password Protected</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Licenses</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">Changelog</a></li>
+                    <li><a href="#" class="text-muted-foreground hover:text-primary">View More</a></li>
+                </ul>
+            </div>
+
+            <p class="text-sm"><center>Copyright © 2024 CPP104 - Group 2 Developer. All Rights Reserved</center></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS --->
+    <link rel="stylesheet" href="styleLSpg1.css">
+
+<!-- Log in/Sign up Page-->
+    <title>Snap Food LOG IN/SIGN UP</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;}
+        .background-container {
+            align-items: center;
+            background-image: url('images/desktop.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;}
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 20px;}
+        .logo {
+            width: 130px; 
+            height: auto;}
+        .snap-food-text {
+            font-family: "Lucida Handwriting";
+            font-size: 54px;
+            color: #ffffff; 
+            padding-left: 10px;
+            vertical-align: middle;
+            font-weight: bold;}
+    </style>
+</head>
+
+<body>
+    <div class="background-container">
+        <div class="navbar">
+            <img src="images/SF logo.png" alt="SF Logo" class="logo">
+            <span class="snap-food-text">Snap Food</span>
+        </div>
+    </div>
+
+<div class="wrapper">
+    <div class="card-switch">
+        <label class="switch">
+            <input type="checkbox" class="toggle">
+            <span class="slider"></span>
+            <span class="card-side"></span>
+            <div class="flip-card__inner">
+                <div class="flip-card__front">
+                    <div class="title">Log in</div>
+                    <form class="flip-card__form" action="">
+                    <input class="flip-card__input" name="email" placeholder="Email" type="email">
+                    <input class="flip-card__input" name="password" placeholder="Password" type="password">
+                    <button class="flip-card__btn" style="color: #140505;">Let`s go!</button>            </form>
+                </div>
+                <div class="flip-card__back">
+                    <div class="title">Sign up</div>
+                    <form class="flip-card__form" action="">
+                    <input class="flip-card__input" placeholder="Name" type="name">
+                    <input class="flip-card__input" name="email" placeholder="Email" type="email">
+                    <input class="flip-card__input" name="password" placeholder="Password" type="password">
+                    <button class="flip-card__btn" style="color: #140505">Confirm!</button>
+                    </form>
+                </div>
+            </div>
+        </label>
+    </div>   
+</div>
+
+
+</body>
+</html>
