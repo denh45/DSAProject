@@ -2,12 +2,6 @@ const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
 
-document
-  .getElementById("btnLogin")
-  .addEventListener("click", () =>
-    location.assign("http://localhost:8000/Dashboard")
-  );
-
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
 });
@@ -27,7 +21,6 @@ document.getElementById("showPassword").addEventListener("click", () => {
   }
 });
 
-
 // function eee(a){
 //   console.log(')
 // }
@@ -41,5 +34,4 @@ document.getElementById("showPassword").addEventListener("click", () => {
 
 //   }
 
-  
 // }

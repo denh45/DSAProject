@@ -10,11 +10,10 @@
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:bjwell19@gmail.com">bjwell19@gmail.com</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>(0938)143-4261</span></i>
       </div>
-      <div class="languages d-none d-md-flex align-items-center">
-        <ul>
-          <li>En</li>
-          <li><a href="#">De</a></li>
-        </ul>
+      <div class="languages d-none d-md-flex align-items-center gap-3">
+        <p class="m-0">Hi, {{session.get('user')}}</p>
+        <p class="m-0">|</p>
+        <a id="btnLogout" class="m-0" style="cursor: pointer;">Logout</a> 
       </div>
     </div>
   </div><!-- End Top Bar -->
@@ -785,7 +784,7 @@
                 <span>Patissier</span>
               </div>
               <div class="social">
-                <a href="" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com/_regular_moriwhelmed_meadows_?" target="_blank"><i class="bi bi-twitter-x"></i></a>
                 <a href="https://www.facebook.com/k1wei" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
                 <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -803,10 +802,10 @@
                 <span>Cook</span>
               </div>
               <div class="social">
-                <a href="" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://x.com/padillarheden1" target="_blank"><i class="bi bi-twitter-x"></i></a>
                 <a href="https://www.facebook.com/rhedenpadilla05" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a href="" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/rn_grgrgr?igsh=dDNkdTR6Y2tjYTB1" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/rheden-padilla-2210062a7?" target="_blank"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -987,5 +986,18 @@
 <!-- Preloader -->
 <div id="preloader"></div>
 
+<script>
+
+  document.getElementById("btnLogout").addEventListener("click", async (e) => {
+    try {
+      const response = await axios.get('{{url_for(".logout")}}')
+      console.log("Logout Success!!", response);
+      location.assign('/')
+    } catch (error) {
+      console.error("Login Error", error);
+    }
+  });
+
+</script>
 
 {% endblock %}
