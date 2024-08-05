@@ -20,18 +20,3 @@ document.getElementById("showPassword").addEventListener("click", () => {
     password.type = "password";
   }
 });
-
-// function eee(a){
-//   console.log(')
-// }
-
-// let a = () => {
-
-// }
-
-// class wdd{
-//   constructor(){
-
-//   }
-
-// }
