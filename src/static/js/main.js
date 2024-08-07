@@ -147,6 +147,8 @@
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      console.log(swiperElement.querySelector(".swiper-config").innerHTML)
+      
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -200,5 +202,81 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  
+// Prefix Trie Node
+class TrieNode {
+  constructor() {
+      this.children = {};
+      this.isEndOfWord = false;
+  }
+}
+
+class Trie {
+  constructor() {
+      this.root = new TrieNode();
+  }
+
+  insert(word) {
+      let node = this.root;
+      for (let char of word.toLowerCase()) {
+          if (!node.children[char]) {
+              node.children[char] = new TrieNode();
+          }
+          node = node.children[char];
+      }
+      node.isEndOfWord = true;
+  }
+
+  find(prefix) {
+      let node = this.root;
+      for (let char of prefix.toLowerCase()) {
+          if (!node.children[char]) {
+              return [];
+          }
+          node = node.children[char];
+      }
+      return this._findAllWords(node, prefix);
+  }
+
+  _findAllWords(node, prefix) {
+      let results = [];
+      if (node.isEndOfWord) {
+          results.push(prefix);
+      }
+      for (let char in node.children) {
+          results = results.concat(this._findAllWords(node.children[char], prefix + char));
+      }
+      return results;
+  }
+}
+
+let trie = new Trie();
+let states = ['Strawberry Fruit Juice', 'Kiwi Fruit Juice', 'Star Apple Fruit Juice', 'Orange Fruit Juice', 'Hawaiian Grilled Salmon Fillet',
+'Classic Shrimp', 'Salmon En Croute', 'Lobster Themidor', 'All In Seafood', 'Shrimoy Seafood', 'Cry To Burger',
+'Supreme Burger', 'Classic Burger', 'Deluxe Double Hot Beef Burger', 'Fruity Mango Cake', 'Cheo Mint Cake', 'Strawberry Cake', 'Cherry Bomb Cake',
+'Meisan Pizza', 'Cheuvaury Pizza', 'Mholea Pizza', 'Chikirri Pizza', 'Garden Fresh Salad',
+'Salamanders', 'Spicy Chickpea Wrap', 'Veggie Stir-fry with Tofu'];
+
+states.forEach(state => trie.insert(state));
+
+var substringMatcher = function(trie) {
+  return function findMatches(q, cb) {
+      let matches = trie.find(q);
+      cb(matches);
+  };
+};
+
+$('.typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+}, {
+  name: 'states',
+  source: substringMatcher(trie)
+});
+
+
+
 
 })();
