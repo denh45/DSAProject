@@ -1,5 +1,6 @@
 from src import app
-app.secret_key = 'kahit ano'
+
+app.secret_key = "kahit ano"
 
 
 if __name__ == "__main__":
