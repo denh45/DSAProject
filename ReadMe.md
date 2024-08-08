@@ -6,22 +6,26 @@
 
 ## Software Requirements
   ### Language
+  | Language  | Percentage | Functions and Decription |Tools |
+  | ----------| -----------|--------------------------|------- |
+  | HTML      | 45.6 %     | serve as structure |doc |
+  | CSS       | 43.9%      | maily style |none |
+  | JavaScript| 6.4%   | functions of the website| none |
+  | Python    | 4.1%       | For run and database init |none |
+  
   ### Tools
 
 ## Conceptual Design
 
 ## Implementation
-  ### Code Structure
-
   ### Key Algorithms
-  1. #### **Linear Data Structures**
+  1. #### **Queue**
      #### To handle incoming food orders efficiently, we use a queue. The queue ensures that orders are processed on a first-come, first-served basis. This linear structure is simple and   helps maintain order fairness, ensuring customers receive their food in the sequence they ordered.
-  2. #### **Non-Linear Data Structures**
+  2. #### **Prefix Tree (Trie)**
      #### For menu management and item searches, we will implement a trie (prefix tree). This non-linear structure allows for quick and efficient searches, making it easy for users to find menu items based on prefixes. The trie structure organizes menu items in a way that reduces search time, enhancing the user experience.
 
 ## Documentation
   ### System Interface
   ### System Structures 
 
-## Reference
   
