@@ -33,24 +33,39 @@
           <li><a href="#about">About</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#specials">Specials</a></li>
-          <li><a href="#events">Events</a></li>
+          <li><a href="#Testimonials">Testimonials</a></li>
           <li><a href="#chefs">Chefs</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
+          <li class="dropdown"><a href="#"><span>Cart</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul style="
+            width: 500px;
+            left: -120px;
+        ">
+        
+              <li>
+                <div class="border-bottom p-3">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="">
+                      <img src="{{ url_for('static', filename='img/6.png') }}" alt="" style="width: 60px;"> 
+                    </div>
+                    <div class="d-flex gap-3" style="font-weight: bold;">
+                      <div style="text-transform: capitalize;overflow-wrap: break-word;text-align: center;">chicken joy</div>
+                      <div>130</div>
+                      <div>
+                        <input type="number">
+                      </div>
+                      <div>P260</div>
+                    </div>
+                    <div class="">
+                      <button type="button" class="btn-book-a-table" style="
+                      background: transparent;
+                      padding: 5px 11px;
+                  ">X</button>
+                    </div>
+                  </div>
+                </div>
               </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+          
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -58,10 +73,10 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-book-a-table d-none d-xl-block" href="#book-a-table">Book a Table</a>
+      <a class="btn-book-a-table d-none d-xl-block" href="#menu">Order Menu</a>
 
     </div>
-
+    
   </div>
 
 </header>
@@ -77,10 +92,11 @@
       <div class="row">
         <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
           <h2 data-aos="fade-up" data-aos-delay="100">Welcome to <span>SnapFood</span></h2>
-          <p data-aos="fade-up" data-aos-delay="200">Delivering great food for more than 18 years!</p>
-          <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="#menu" class="cta-btn">Our Menu</a>
-            <a href="#book-a-table" class="cta-btn">Book a Table</a>
+          <p data-aos="fade-up" data-aos-delay="200">Delivering great food for more than 1 mid-year</p>
+          <div class="contact mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="php-email-form">
+                <input type="text" name="name" class="typeahead form-control" placeholder="What are you craving for?" required style="width: 500px;">
+              </div>
           </div>
         </div>
         <div class="col-lg-4 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
@@ -98,22 +114,33 @@
 
       <div class="row gy-4">
         <div class="col-lg-6 order-1 order-lg-2">
-          <img src="{{ url_for('static', filename='img/about.jpg') }}" class="img-fluid about-img" alt="">
+          <img src="{{ url_for('static', filename='img/about.png') }}" class="img-fluid about-img" alt="">
         </div>
         <div class="col-lg-6 order-2 order-lg-1 content">
-          <h3>Voluptatem dignissimos provident</h3>
+          <h3>SnapFood Online Delivery System</h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            In this project, we will develop an Online Food Delivery System using Python,
+            highlighting the implementation and advantages of both linear and non-linear data structures.
           </p>
           <ul>
-            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-            <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+            <li><i class="bi bi-check2-all"></i> <span><strong>Linear Data Structures</strong>
+
+              To handle incoming food orders efficiently, we use a queue. The queue ensures
+              that orders are processed on a first-come, first-served basis. This linear structure is
+              simple and helps maintain order fairness, ensuring customers receive their food in the
+              sequence they ordered.</span></li>
+            <li><i class="bi bi-check2-all"></i> <span><strong>Non-Linear Data Structures</strong>
+
+              For menu management and item searches, we will implement a trie (prefix tree).
+              This non-linear structure allows for quick and efficient searches, making it easy for users
+              to find menu items based on prefixes. The trie structure organizes menu items in a way
+              that reduces search time, enhancing the user experience.</span></li>
           </ul>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+            This assumes the effective use of linear and non- linear data structures to manage orders and menu searches. By using queues and tries, we aim
+            to provide a balanced and efficient platform for both restaurant owners and customers. The
+            chosen data structures are integral to the system&#39;s performance, ensuring fair order processing
+            and quick access to menu items.
           </p>
         </div>
       </div>
@@ -128,7 +155,7 @@
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <h2>WHY US</h2>
-      <p>Why Choose Our Restaurant</p>
+      <p>Why Ipapasa Our Project</p>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -138,24 +165,24 @@
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="card-item">
             <span>01</span>
-            <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <h4><a href="" class="stretched-link">We need to pass</a></h4>
+            <p>Ayaw namin ma-irreg huhuhu</p>
           </div>
         </div><!-- Card Item -->
 
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card-item">
             <span>02</span>
-            <h4><a href="" class="stretched-link">Repellat Nihil</a></h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            <h4><a href="" class="stretched-link">Kasi pogi ang ssob namin</a></h4>
+            <p>Yun ohhh, Bolero at it's Finest  EEEYYY </p>
           </div>
         </div><!-- Card Item -->
 
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <div class="card-item">
             <span>03</span>
-            <h4><a href="" class="stretched-link">Ad ad velit qui</a></h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            <h4><a href="" class="stretched-link">PLEASE</a></h4>
+            <p>AYAW KO BUMAGSAK HEHE</p>
           </div>
         </div><!-- Card Item -->
 
@@ -180,104 +207,286 @@
         <div class="col-lg-12 d-flex justify-content-center">
           <ul class="menu-filters isotope-filters">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-starters">Starters</li>
-            <li data-filter=".filter-salads">Salads</li>
-            <li data-filter=".filter-specialty">Specialty</li>
+            <li data-filter=".filter-fruitjuice">Fruit Juice</li>
+            <li data-filter=".filter-seafoods">Seafoods</li>
+            <li data-filter=".filter-burgers">Burgers</li>
+            <li data-filter=".filter-cakes">Cakes</li>
+            <li data-filter=".filter-pizza">Pizza</li>
+            <li data-filter=".filter-veggies">Veggies</li>
+
           </ul>
         </div>
-      </div><!-- Menu Filters -->
+      </div><!-- Fruit Juice Filters -->
 
       <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-        <div class="col-lg-6 menu-item isotope-item filter-starters">
-          <img src="{{ url_for('static', filename='img/menu/lobster-bisque.jpg') }}" class="menu-img" alt="">
+        <div class=" food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+          <img src="{{ url_for('static', filename='img/menu/strawberryfruitjuice.png') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Lobster Bisque</a><span>$5.95</span>
+            <a href="#">Strawberry Fruit Juice</a><span>₱100</span>
           </div>
           <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
+            strawberry, water, H20
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+          <img src="{{ url_for('static', filename='img/menu/kiwifruitjuice.png') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Kiwi Fruit Juice</a><span>₱120</span>
+          </div>
+          <div class="menu-ingredients">
+            Special, Kiwi with kiwi seeds
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+          <img src="{{ url_for('static', filename='img/menu/starapplefruitjuice.png') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Star Apple Fruit Juice</a><span>₱100</span>
+          </div>
+          <div class="menu-ingredients">
+            Star apple arnis
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+          <img src="{{ url_for('static', filename='img/menu/orangefruitjuice.png') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Orange Fruit Juice</a><span>₱100</span>
+          </div>
+          <div class="menu-ingredients">
+            Orange, with seeds and pulp
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-specialty">
-          <img src="{{ url_for('static', filename='img/menu/bread-barrel.jpg') }}" class="menu-img" alt="">
+        
+        <!-- Sea foods Filter -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/hawaiiangrilledsalmonfillet.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Bread Barrel</a><span>$6.95</span>
+            <a href="#">Hawaiian Grilled Salmon Fillet</a><span>₱250</span>
           </div>
           <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
+            Hawaiian babe, with salmon
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/classicshrimp.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Classic Shrimp</a><span>₱300</span>
+          </div>
+          <div class="menu-ingredients">
+            Rare shrimp from 1870's
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/salmonencroute.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Salmon En Croute</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            Salmon Only
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/lobsterthemidor.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Lobster Themidor</a><span>₱230</span>
+          </div>
+          <div class="menu-ingredients">
+            Lobster from Spongebob
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/allinseafood.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">All In Seafood</a><span>₱500</span>
+          </div>
+          <div class="menu-ingredients">
+            Special, came from bikini-bottom
+          </div>
+        </div><!-- Menu Item -->
+        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+          <img src="{{ url_for('static', filename='img/menu/shrimoyseafood.webp') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Shrimoy Seafood</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            Exported from outerspace
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-starters">
-          <img src="{{ url_for('static', filename='img/menu/cake.jpg') }}" class="menu-img" alt="">
+
+        <!-- Burgers -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+          <img src="{{ url_for('static', filename='img/menu/crytoburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Crab Cake</a><span>$7.95</span>
+            <a href="#">Cry To Burger</a><span>₱100</span>
           </div>
           <div class="menu-ingredients">
-            A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+            Burger from Emo
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-salads">
-          <img src="{{ url_for('static', filename='img/menu/caesar.jpg') }}" class="menu-img" alt="">
+        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+          <img src="{{ url_for('static', filename='img/menu/supremeburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Caesar Selections</a><span>$8.95</span>
+            <a href="#">Supreme Burger</a><span>₱300</span>
           </div>
           <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
+            Supreme but not special :P 
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-specialty">
-          <img src="{{ url_for('static', filename='img/menu/tuscan-grilled.jpg') }}" class="menu-img" alt="">
+        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+          <img src="{{ url_for('static', filename='img/menu/classicburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Tuscan Grilled</a><span>$9.95</span>
+            <a href="#">Classic Burger</a><span>₱200</span>
           </div>
           <div class="menu-ingredients">
-            Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+            Burger from 1700's
+          </div>
+        </div><!-- Menu Item -->
+        
+        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+          <img src="{{ url_for('static', filename='img/menu/deluxedoublehotbeefburger.png') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Deluxe Double Hot Beef Burger</a><span>₱400</span>
+          </div>
+          <div class="menu-ingredients">
+            Special, with Hot chickbabe
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-starters">
-          <img src="{{ url_for('static', filename='img/menu/mozzarella.jpg') }}" class="menu-img" alt="">
+
+        <!-- cakes  -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+          <img src="{{ url_for('static', filename='img/menu/fruitymangocake.png') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Mozzarella Stick</a><span>$4.95</span>
+            <a href="#">Fruity Mango Cake</a><span>₱200</span>
           </div>
           <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
+            Fruit & Mango
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-salads">
-          <img src="{{ url_for('static', filename='img/menu/greek-salad.jpg') }}" class="menu-img" alt="">
+        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+          <img src="{{ url_for('static', filename='img/menu/cheomintcake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Greek Salad</a><span>$9.95</span>
+            <a href="#">Cheo Mint Cake </a><span>₱200</span>
           </div>
           <div class="menu-ingredients">
-            Fresh spinach, crisp romaine, tomatoes, and Greek olives
+            with menthol
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-salads">
-          <img src="{{ url_for('static', filename='img/menu/spinach-salad.jpg') }}" class="menu-img" alt="">
+        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+          <img src="{{ url_for('static', filename='img/menu/strawberrycake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Spinach Salad</a><span>$9.95</span>
+            <a href="#">Strawberry Cake</a><span>₱200</span>
           </div>
           <div class="menu-ingredients">
-            Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+            Strawberry and whipcream
           </div>
         </div><!-- Menu Item -->
 
-        <div class="col-lg-6 menu-item isotope-item filter-specialty">
-          <img src="{{ url_for('static', filename='img/menu/lobster-roll.jpg') }}" class="menu-img" alt="">
+        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+          <img src="{{ url_for('static', filename='img/menu/cherrybombcake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Lobster Roll</a><span>$12.95</span>
+            <a href="#">Cherry Bomb Cake</a><span>₱1600</span>
           </div>
           <div class="menu-ingredients">
-            Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+            Special, Cherries with C4 Charges (LETHAL)
           </div>
         </div><!-- Menu Item -->
+
+        <!-- pizza -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+          <img src="{{ url_for('static', filename='img/menu/meisanpizza.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Meisan Pizza</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            Just a regular Pizza
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+          <img src="{{ url_for('static', filename='img/menu/cheuvaurypizza.png') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Cheuvaury Pizza</a><span>₱900</span>
+          </div>
+          <div class="menu-ingredients">
+            Special from multiverse
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+          <img src="{{ url_for('static', filename='img/menu/mholeapizza.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Mholea Pizza</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            With moles
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+          <img src="{{ url_for('static', filename='img/menu/chikirripizza.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Chikirri Pizza</a><span>₱100</span>
+          </div>
+          <div class="menu-ingredients">
+            Just a pizza
+          </div>
+        </div><!-- Menu Item -->
+
+        <!-- veggies -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+          <img src="{{ url_for('static', filename='img/menu/gardenfreshsalad.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Garden Fresh Salad</a><span>₱400</span>
+          </div>
+          <div class="menu-ingredients">
+            Fresh from bakuran ni planTita
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+          <img src="{{ url_for('static', filename='img/menu/salamanders.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Salamanders</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            With salamander
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+          <img src="{{ url_for('static', filename='img/menu/spicychickenwrap.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Spicy Chickpea Wrap</a><span>₱200</span>
+          </div>
+          <div class="menu-ingredients">
+            Chicken
+          </div>
+        </div><!-- Menu Item -->
+
+        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+          <img src="{{ url_for('static', filename='img/menu/veggiestirfrywithtofu.jpg') }}" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Veggie Stir-fry with Tofu</a><span>₱400</span>
+          </div>
+          <div class="menu-ingredients">
+            Special Tofu from China
+          </div>
+        </div><!-- Menu Item -->
+
+        
+    
 
       </div><!-- Menu Container -->
 
@@ -300,19 +509,19 @@
         <div class="col-lg-3">
           <ul class="nav nav-tabs flex-column">
             <li class="nav-item">
-              <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1">Modi sit est</a>
+              <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1">Fruit Juice</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2">Unde praesentium sed</a>
+              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2">Burgers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-3">Pariatur explicabo vel</a>
+              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-3">Cakes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-4">Nostrum qui quasi</a>
+              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-4">Pizzas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-5">Iusto ut expedita aut</a>
+              <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-5">Veggies</a>
             </li>
           </ul>
         </div>
@@ -321,60 +530,61 @@
             <div class="tab-pane active show" id="specials-tab-1">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Architecto ut aperiam autem id</h3>
-                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                  <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                  <h3>Kiwi Fruit Juice</h3>
+                  <p class="fst-italic">Dive into a glass of vibrant Kiwi Fruit Juice.</p>
+                  <p>Where every sip delivers a refreshing burst of tropical flavor. Perfectly chilled and irresistibly fruity, it's the ultimate thirst-quencher! Refresh your day with this revitalizing juice, packed with vitamin C and natural goodness, making it a healthful indulgence you can feel good about.</p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{ url_for('static', filename='img/specials-1.png') }}" alt="" class="img-fluid">
+                  <img src="{{ url_for('static', filename='img/menu/kiwifruitjuice.png') }}" alt="" class="img-fluid rounded-start-pill">
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="specials-tab-2">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Et blanditiis nemo veritatis excepturi</h3>
-                  <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                  <p>Ea ipsum voluptatem consequatur quis est. Illum error ullam omnis quia et reiciendis sunt sunt est. Non aliquid repellendus itaque accusamus eius et velit ipsa voluptates. Optio nesciunt eaque beatae accusamus lerode pakto madirna desera vafle de nideran pal</p>
+                  <h3>Deluxe Double Hot Beef Burger</h3>
+                  <p class="fst-italic">Savor the indulgence of our Deluxe Double Hot Beef Burger.</p>
+                  <p>Featuring two juicy beef patties piled high with spicy toppings. This burger is a flavor-packed adventure that will set your taste buds ablaze! Each bite offers a perfect balance of sizzling heat and savory beef, delivering an unforgettable burger experience that leaves you craving more.</p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{ url_for('static', filename='img/specials-2.png') }}" alt="" class="img-fluid">
+                  <img src="{{ url_for('static', filename='img/menu/deluxedoublehotbeefburger.png') }}" alt="" class="img-fluid rounded-start-pill">
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="specials-tab-3">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                  <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                  <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                  <h3>Cherry Bomb Cake</h3>
+                  <p class="fst-italic">Experience a sweet explosion with our Cherry Bomb Cake.</p>
+                  <p>A decadent treat bursting with juicy cherries and rich, velvety frosting. Each bite is a delightful surprise that’s sure to satisfy your sweet tooth! Perfect for celebrations or a special dessert, this cake combines luscious cherry flavors with a light, fluffy texture for a dessert that's both elegant and irresistible.</p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{ url_for('static', filename='img/specials-3.png') }}" alt="" class="img-fluid">
+                  <img src="{{ url_for('static', filename='img/menu/cherrybombcake.jpg') }}" alt="" class="img-fluid rounded-start-pill">
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="specials-tab-4">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                  <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                  <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                  <h3>Cheuvaury Pizza</h3>
+                  <p class="fst-italic">Treat yourself to the Cheuvaury Pizza, a gourmet creation topped with premium ingredients and crafted to perfection.</p>
+                  <p>This pizza promises an unforgettable culinary experience with every delicious slice! Enjoy a harmonious blend of rich flavors and crispy crust, making it the perfect choice for a hearty meal or sharing with friends and family.
+                  </p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{ url_for('static', filename='img/specials-4.png') }}" alt="" class="img-fluid">
+                  <img src="{{ url_for('static', filename='img/menu/cheuvaurypizza.png') }}" alt="" class="img-fluid rounded-start-pill">
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="specials-tab-5">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                  <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                  <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                  <h3>Veggie Stir-fry with Tofu</h3>
+                  <p class="fst-italic">Enjoy the vibrant flavors of our Veggie Stir-fry with Tofu</p>
+                  <p>a colorful medley of fresh vegetables and tofu stir-fried to perfection. It’s a healthy and tasty dish that’s as satisfying as it is nutritious! With its savory sauce and crisp, tender veggies, this stir-fry delivers a burst of flavor and a hearty dose of goodness in every bite.</p>
                 </div>
                 <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{ url_for('static', filename='img/specials-5.png') }}" alt="" class="img-fluid">
+                  <img src="{{ url_for('static', filename='img/menu/veggiestirfrywithtofu.jpg') }}" alt="" class="img-fluid rounded-start-pill">
                 </div>
               </div>
             </div>
@@ -385,120 +595,6 @@
     </div>
 
   </section><!-- /Specials Section -->
-
-  <!-- Events Section -->
-  <section id="events" class="events section">
-
-    <img class="slider-bg" src="{{ url_for('static', filename='img/events-bg.jpg') }}" alt="" data-aos="fade-in">
-
-    <div class="container">
-
-      <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
-        <script type="application/json" class="swiper-config">
-          {
-            "loop": true,
-            "speed": 600,
-            "autoplay": {
-              "delay": 5000
-            },
-            "slidesPerView": "auto",
-            "pagination": {
-              "el": ".swiper-pagination",
-              "type": "bullets",
-              "clickable": true
-            }
-          }
-        </script>
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="row gy-4 event-item">
-              <div class="col-lg-6">
-                <img src="{{ url_for('static', filename='img/events-slider/events-slider-1.jpg') }}" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6 pt-4 pt-lg-0 content">
-                <h3>Birthday Parties</h3>
-                <div class="price">
-                  <p><span>$189</span></p>
-                </div>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur
-                </p>
-              </div>
-            </div>
-          </div><!-- End Slider item -->
-
-          <div class="swiper-slide">
-            <div class="row gy-4 event-item">
-              <div class="col-lg-6">
-                <img src="{{ url_for('static', filename='img/events-slider/events-slider-2.jpg') }}" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6 pt-4 pt-lg-0 content">
-                <h3>Private Parties</h3>
-                <div class="price">
-                  <p><span>$290</span></p>
-                </div>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur
-                </p>
-              </div>
-            </div>
-          </div><!-- End Slider item -->
-
-          <div class="swiper-slide">
-            <div class="row gy-4 event-item">
-              <div class="col-lg-6">
-                <img src="{{ url_for('static', filename='img/events-slider/events-slider-3.jpg') }}" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6 pt-4 pt-lg-0 content">
-                <h3>Custom Parties</h3>
-                <div class="price">
-                  <p><span>$99</span></p>
-                </div>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur
-                </p>
-              </div>
-            </div>
-          </div><!-- End Slider item -->
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-
-  </section><!-- /Events Section -->
 
   <!-- Book A Table Section -->
   <section id="book-a-table" class="book-a-table section">
@@ -550,7 +646,7 @@
   </section><!-- /Book A Table Section -->
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials section">
+  <section id="Testimonials" class="testimonials section">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
@@ -564,9 +660,9 @@
         <script type="application/json" class="swiper-config">
           {
             "loop": true,
-            "speed": 600,
+            "speed": 2500,
             "autoplay": {
-              "delay": 5000
+              "delay": 600
             },
             "slidesPerView": "auto",
             "pagination": {
@@ -592,12 +688,12 @@
             <div class="testimonial-item" "="">
           <p>
             <i class=" bi bi-quote quote-icon-left"></i>
-              <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+              <span>Snap Food is an exceptional delivery app, offering a seamless and intuitive ordering process. With its user-friendly interface and top-notch customer service, Snap Food ensures a reliable and efficient delivery experience every time. Highly recommended for anyone in need of a dependable food delivery service. 😋</span>
               <i class="bi bi-quote quote-icon-right"></i>
               </p>
-              <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
+              <img src="{{ url_for('static', filename='img/testimonials/Palma-1.jpg') }}" class="testimonial-img" alt="">
+              <h3>Marc Owen A. Palma</h3>
+              <h4>Jowa ni  Ivy Jean</h4>
             </div>
           </div><!-- End testimonial item -->
 
@@ -605,12 +701,12 @@
             <div class="testimonial-item">
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                <span>I particularly enjoyed the inventive twists on classic foods. This SnapFood delivery app is perfect for foodies like me! The menu offers a terrific assortment of foods, and we like everything we tasted. I cannot wait to place another order! </span>
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
-              <img src="{{ url_for('static', filename='img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
+              <img src="{{ url_for('static', filename='img/testimonials/ivy-2.jpg') }}" class="testimonial-img" alt="">
+              <h3>Ivy Jean P. Rivera</h3>
+              <h4>Bebe ni Owen</h4>
             </div>
           </div><!-- End testimonial item -->
 
@@ -618,12 +714,12 @@
             <div class="testimonial-item">
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                <span>I recently used Snap Food, and I'm thoroughly impressed! The ordering process was smooth, with an intuitive interface that made it easy to navigate. Overall, Snap Food provided me a hassle-free experience and excellent customer service. Highly recommended for anyone needing reliable and efficient delivery.</span>
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
-              <img src="{{ url_for('static', filename='img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
+              <img src="{{ url_for('static', filename='img/testimonials/rebaton-3.jpg') }}" class="testimonial-img" alt="">
+              <h3>Justin G. Rebaton</h3>
+              <h4>Classmate namin</h4>
             </div>
           </div><!-- End testimonial item -->
 
@@ -631,12 +727,12 @@
             <div class="testimonial-item">
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                <span>Well, Snap Food is probably one of the best food delivery apps I've ever used so far. With their great service, friendly interaction with clients, fast delivery of foods which will only takes 5-10 minutes of delivery and decent customer service. This is highly recommended for those who you're looking for a quick, hassle-free dining experience, Snap Food is definitely the way to go.</span>
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
-              <img src="{{ url_for('static', filename='img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
+              <img src="{{ url_for('static', filename='img/testimonials/abantao-4.jpeg') }}" class="testimonial-img" alt="">
+              <h3>John Vladimir C. Abantao</h3>
+              <h4>Batak sa EDA</h4>
             </div>
           </div><!-- End testimonial item -->
 
@@ -644,12 +740,12 @@
             <div class="testimonial-item">
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                <span>This online food delivery is made it easier for me to enjoy the meal, no hassle to order and the food is yummy😋. The delivery service is really quick, I highly recommend this app to anyone looking for fast service and far from the food restaurant.</span>
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
-              <img src="{{ url_for('static', filename='img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
+              <img src="{{ url_for('static', filename='img/testimonials/castillo-5.jpg') }}" class="testimonial-img" alt="">
+              <h3>Troy Angelo P. Castillo</h3>
+              <h4>Yort Yort</h4>
             </div>
           </div><!-- End testimonial item -->
 
@@ -799,7 +895,7 @@
             <div class="member-info">
               <div class="member-info-content">
                 <h4>Rheden Padilla</h4>
-                <span>Cook</span>
+                <span>Bf ni Airajoy Mae Monterde</span>
               </div>
               <div class="social">
                 <a href="https://x.com/padillarheden1" target="_blank"><i class="bi bi-twitter-x"></i></a>
@@ -918,50 +1014,17 @@
           <span class="sitename">SnapFood</span>
         </a>
         <div class="footer-contact pt-3">
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
+          <p>Katapatan Mutual Homes</p>
+          <p>Laguna, Philippines 4025</p>
           <p class="mt-3"><strong>Phone:</strong> <span>(0938)143-4261</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p><strong>Email:</strong> <span>bjwell19@gmail.com</span></p>
         </div>
         <div class="social-links d-flex mt-4">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/Jwell192000"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/jwell.192000"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/0119.2000/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/jwell19/"><i class="bi bi-linkedin"></i></a>
         </div>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Terms of service</a></li>
-          <li><a href="#">Privacy policy</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Product Management</a></li>
-          <li><a href="#">Marketing</a></li>
-          <li><a href="#">Graphic Design</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-4 col-md-12 footer-newsletter">
-        <h4>Our Newsletter</h4>
-        <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-        <form action="forms/newsletter.php" method="post" class="php-email-form">
-          <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-        </form>
       </div>
 
     </div>
@@ -974,17 +1037,41 @@
       <!-- You can delete the links only if you've purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://www.facebook.com/jwell.192000">Jelly Well Batara</a>
     </div>
   </div>
 
 </footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalAddToCart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-black" id="staticBackdropLabel">SnapFood Cart</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="cart-title" class="text-black"></h2>
+        <h4 id="cart-price" class="text-black"></h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Preloader -->
 <div id="preloader"></div>
+
+
+
 
 <script>
 
@@ -997,6 +1084,22 @@
       console.error("Login Error", error);
     }
   });
+
+document.querySelectorAll('.food-item').forEach(item =>{
+  item.addEventListener('click', (e) => {
+    const parent = item
+    const content = parent.children[1]
+    const title = content.children[0].innerHTML
+    const price = content.children[1].innerHTML
+
+    document.getElementById('cart-title').innerHTML = title
+    document.getElementById('cart-price').innerHTML = price
+    
+    const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalAddToCart'))
+    modal.show()
+
+
+})})
 
 </script>
 

@@ -7,7 +7,12 @@
         <span></span>
         <input required id="txtCreateusername" type="text" placeholder="Name" />
         <input required id="txtCreatemail" type="email" placeholder="Email" />
-        <input required id="txtCreatepassword" type="password" placeholder="Password" />
+        <input
+          required
+          id="txtCreatepassword"
+          type="password"
+          placeholder="Password"
+        />
         <button type="submit">Sign Up</button>
       </form>
     </div>
@@ -15,7 +20,12 @@
       <form id="btnLogin">
         <h1>Login to Snap Food</h1>
         <input required id="txtUsername" type="email" placeholder="Email" />
-        <input required id="txtpassword" type="password" placeholder="Password" />
+        <input
+          required
+          id="txtpassword"
+          type="password"
+          placeholder="Password"
+        />
         <a href="#" id="showPassword" style="margin-top: 0px">show password</a>
         <button type="submit">Login</button>
       </form>
@@ -48,8 +58,32 @@
 </div>
 
 <script>
+  const signUpButton = document.getElementById("signUp");
+  const signInButton = document.getElementById("signIn");
+  const container = document.getElementById("container");
+
+  signUpButton.addEventListener("click", () => {
+    container.classList.add("right-panel-active");
+  });
+
+  signInButton.addEventListener("click", () => {
+    container.classList.remove("right-panel-active");
+  });
+
+
+  document.getElementById("showPassword").addEventListener("click", () => {
+    debugger
+    const password = document.getElementById("txtpassword");
+    const type = password.type;
+    if (type === "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
+  });
+
   document.getElementById("btnLogin").addEventListener("submit", async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const txtUsername = document.getElementById("txtUsername").value;
     const txtpassword = document.getElementById("txtpassword").value;
 
@@ -72,7 +106,7 @@
 
   //---------------create user-----------------
   document.getElementById("btnSignup").addEventListener("submit", async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const txtCreateusername =
       document.getElementById("txtCreateusername").value;
     const txtCreatemail = document.getElementById("txtCreatemail").value;
