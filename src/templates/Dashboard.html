@@ -2,6 +2,110 @@
 
 {% block content %}
 
+<style>
+  .item {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+  }
+  .item:nth-child(3) {
+    border-top:  1px solid #E1E8EE;
+    border-bottom:  1px solid #E1E8EE;
+  }
+
+  .buttons {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 10px;
+  }
+  .delete-btn {
+    display: inline-block;
+    Cursor: pointer;
+  }
+  .delete-btn {
+    width: 18px;
+    height: 17px;
+    background: url("{{ url_for('static', filename='img/delete-icn.svg') }}") no-repeat center;
+  }
+  .is-active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+  }
+  @keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+  }
+
+  .image {
+    margin-right: 50px;
+  }
+  Let’s add some basic style to  product name and description.description {
+    padding-top: 10px;
+    margin-right: 60px;
+    width: 115px;
+  }
+  .description span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+  }
+  .description span:first-child {
+    margin-bottom: 5px;
+  }
+  .description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+  }
+
+  .quantity {
+    padding-top: 20px;
+  }
+  .quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+  button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  .minus-btn img {
+    margin-bottom: 3px;
+  }
+  .plus-btn img {
+    margin-top: 2px;
+  }
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+
+  .total-price {
+    width: 83px;
+    padding-top: 27px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+
+</style>
+
 <header id="header" class="header fixed-top">
 
   <div class="topbar d-flex align-items-center">
@@ -38,35 +142,29 @@
           <li><a href="#gallery">Gallery</a></li>
           <li class="dropdown"><a href="#"><span>Cart</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul style="
-            width: 500px;
+            overflow-y: auto;
+            height: 500px;
+            min-height: 300px;
+            width: 660px;
             left: -120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* margin: 80px auto; */
+            background: #FFFFFF;
+            box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+      
         ">
-        
-              <li>
-                <div class="border-bottom p-3">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="">
-                      <img src="{{ url_for('static', filename='img/6.png') }}" alt="" style="width: 60px;"> 
-                    </div>
-                    <div class="d-flex gap-3" style="font-weight: bold;">
-                      <div style="text-transform: capitalize;overflow-wrap: break-word;text-align: center;">chicken joy</div>
-                      <div>130</div>
-                      <div>
-                        <input type="number">
-                      </div>
-                      <div>P260</div>
-                    </div>
-                    <div class="">
-                      <button type="button" class="btn-book-a-table" style="
-                      background: transparent;
-                      padding: 5px 11px;
-                  ">X</button>
-                    </div>
-                  </div>
-                </div>
-              </li>
-          
+
+        <!-- CART CONTAINER -->
+        <div id="cartContainer"></div> 
+
+          <!-- cart items injected here -->
+          <div>
+            <a id="proceedtocheckoutbtn" style="color: black;" class="btn-book-a-table d-none d-xl-block" href="#menu">Proceed to Checkout</a>
+          </div>
             </ul>
+          
           </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -220,7 +318,7 @@
 
       <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-        <div class=" food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+        <div id="strawberry fruit juice" class=" food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
           <img src="{{ url_for('static', filename='img/menu/strawberryfruitjuice.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Strawberry Fruit Juice</a><span>₱100</span>
@@ -229,7 +327,7 @@
             strawberry, water, H20
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+        <div id="kiwi fruit juice" class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
           <img src="{{ url_for('static', filename='img/menu/kiwifruitjuice.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Kiwi Fruit Juice</a><span>₱120</span>
@@ -238,7 +336,7 @@
             Special, Kiwi with kiwi seeds
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+        <div id="star apple fruit juice" class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
           <img src="{{ url_for('static', filename='img/menu/starapplefruitjuice.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Star Apple Fruit Juice</a><span>₱100</span>
@@ -247,7 +345,7 @@
             Star apple arnis
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
+        <div id="orange fruit juice" class="food-item col-lg-6 menu-item isotope-item filter-fruitjuice">
           <img src="{{ url_for('static', filename='img/menu/orangefruitjuice.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Orange Fruit Juice</a><span>₱100</span>
@@ -260,7 +358,7 @@
         
         <!-- Sea foods Filter -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="hawaiian grilled salmon fillet" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/hawaiiangrilledsalmonfillet.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Hawaiian Grilled Salmon Fillet</a><span>₱250</span>
@@ -269,7 +367,7 @@
             Hawaiian babe, with salmon
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="classic shrimp" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/classicshrimp.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Classic Shrimp</a><span>₱300</span>
@@ -278,7 +376,7 @@
             Rare shrimp from 1870's
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="salmon en croute" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/salmonencroute.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Salmon En Croute</a><span>₱200</span>
@@ -287,7 +385,7 @@
             Salmon Only
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="lobster themidor" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/lobsterthemidor.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Lobster Themidor</a><span>₱230</span>
@@ -296,7 +394,7 @@
             Lobster from Spongebob
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="all in seafood" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/allinseafood.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">All In Seafood</a><span>₱500</span>
@@ -305,7 +403,7 @@
             Special, came from bikini-bottom
           </div>
         </div><!-- Menu Item -->
-        <div class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
+        <div id="shrimoy seafood" class="food-item col-lg-6 menu-item isotope-item filter-seafoods">
           <img src="{{ url_for('static', filename='img/menu/shrimoyseafood.webp') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Shrimoy Seafood</a><span>₱200</span>
@@ -318,7 +416,7 @@
 
         <!-- Burgers -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+        <div id="cry to burger" class="food-item col-lg-6 menu-item isotope-item filter-burgers">
           <img src="{{ url_for('static', filename='img/menu/crytoburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Cry To Burger</a><span>₱100</span>
@@ -328,7 +426,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+        <div id="supreme burger" class="food-item col-lg-6 menu-item isotope-item filter-burgers">
           <img src="{{ url_for('static', filename='img/menu/supremeburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Supreme Burger</a><span>₱300</span>
@@ -338,7 +436,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+        <div id="classic burger" class="food-item col-lg-6 menu-item isotope-item filter-burgers">
           <img src="{{ url_for('static', filename='img/menu/classicburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Classic Burger</a><span>₱200</span>
@@ -348,7 +446,7 @@
           </div>
         </div><!-- Menu Item -->
         
-        <div class="food-item col-lg-6 menu-item isotope-item filter-burgers">
+        <div id="deluxe double hot beef burger" class="food-item col-lg-6 menu-item isotope-item filter-burgers">
           <img src="{{ url_for('static', filename='img/menu/deluxedoublehotbeefburger.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Deluxe Double Hot Beef Burger</a><span>₱400</span>
@@ -361,7 +459,7 @@
 
         <!-- cakes  -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+        <div id="fruity mango cake" class="food-item col-lg-6 menu-item isotope-item filter-cakes">
           <img src="{{ url_for('static', filename='img/menu/fruitymangocake.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Fruity Mango Cake</a><span>₱200</span>
@@ -371,7 +469,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+        <div id="cheo mint cake" class="food-item col-lg-6 menu-item isotope-item filter-cakes">
           <img src="{{ url_for('static', filename='img/menu/cheomintcake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Cheo Mint Cake </a><span>₱200</span>
@@ -381,7 +479,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+        <div id="strawberry cake" class="food-item col-lg-6 menu-item isotope-item filter-cakes">
           <img src="{{ url_for('static', filename='img/menu/strawberrycake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Strawberry Cake</a><span>₱200</span>
@@ -391,7 +489,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-cakes">
+        <div id="cherry bomb cake" class="food-item col-lg-6 menu-item isotope-item filter-cakes">
           <img src="{{ url_for('static', filename='img/menu/cherrybombcake.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Cherry Bomb Cake</a><span>₱1600</span>
@@ -403,7 +501,7 @@
 
         <!-- pizza -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+        <div id="meisan pizza" class="food-item col-lg-6 menu-item isotope-item filter-pizza">
           <img src="{{ url_for('static', filename='img/menu/meisanpizza.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Meisan Pizza</a><span>₱200</span>
@@ -413,7 +511,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+        <div id="cheuvaury pizza" class="food-item col-lg-6 menu-item isotope-item filter-pizza">
           <img src="{{ url_for('static', filename='img/menu/cheuvaurypizza.png') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Cheuvaury Pizza</a><span>₱900</span>
@@ -423,7 +521,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+        <div id="mholea pizza" class="food-item col-lg-6 menu-item isotope-item filter-pizza">
           <img src="{{ url_for('static', filename='img/menu/mholeapizza.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Mholea Pizza</a><span>₱200</span>
@@ -433,7 +531,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-pizza">
+        <div id="chikirri pizza" class="food-item col-lg-6 menu-item isotope-item filter-pizza">
           <img src="{{ url_for('static', filename='img/menu/chikirripizza.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Chikirri Pizza</a><span>₱100</span>
@@ -445,9 +543,9 @@
 
         <!-- veggies -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+        <div id="garden fresh salad" class="food-item col-lg-6 menu-item isotope-item filter-veggies">
           <img src="{{ url_for('static', filename='img/menu/gardenfreshsalad.jpg') }}" class="menu-img" alt="">
-          <div class="menu-content">
+          <div id="" class="menu-content">
             <a href="#">Garden Fresh Salad</a><span>₱400</span>
           </div>
           <div class="menu-ingredients">
@@ -455,7 +553,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+        <div id="salamanders"  class="food-item col-lg-6 menu-item isotope-item filter-veggies">
           <img src="{{ url_for('static', filename='img/menu/salamanders.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Salamanders</a><span>₱200</span>
@@ -465,7 +563,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+        <div id="spicy chickpea wrap" class="food-item col-lg-6 menu-item isotope-item filter-veggies">
           <img src="{{ url_for('static', filename='img/menu/spicychickenwrap.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Spicy Chickpea Wrap</a><span>₱200</span>
@@ -475,7 +573,7 @@
           </div>
         </div><!-- Menu Item -->
 
-        <div class="food-item col-lg-6 menu-item isotope-item filter-veggies">
+        <div id="veggie stir-fry with tofu" class="food-item col-lg-6 menu-item isotope-item filter-veggies">
           <img src="{{ url_for('static', filename='img/menu/veggiestirfrywithtofu.jpg') }}" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Veggie Stir-fry with Tofu</a><span>₱400</span>
@@ -1075,19 +1173,138 @@
 
 <script>
 
+  $(() => {
+    const cartItems = []
+  
+
+  // LOGOUT
+
+  
   document.getElementById("btnLogout").addEventListener("click", async (e) => {
-    try {
-      const response = await axios.get('{{url_for(".logout")}}')
-      console.log("Logout Success!!", response);
-      location.assign('/')
-    } catch (error) {
-      console.error("Login Error", error);
-    }
+    let timerInterval;
+    Swal.fire({
+      title: "Thank you for Using!!",
+      html: "I will close in <b></b> milliseconds.",
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Swal.getTimerLeft()}`;
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      }
+    }).then(async (result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        try {
+          const response = await axios.get('{{url_for(".logout")}}');
+          console.log("Logout Success!!", response);
+          location.assign('/');
+        } catch (error) {
+          console.error("Logout Error", error);
+        }
+      }
+    });
   });
 
-document.querySelectorAll('.food-item').forEach(item =>{
-  item.addEventListener('click', (e) => {
-    const parent = item
+
+  
+  class TrieNode {
+    constructor() {
+      this.children = {};
+      this.isEndOfWord = false;
+    }
+  }
+  
+  class Trie {
+    constructor() {
+      this.root = new TrieNode();
+    }
+  
+    insert(word) {
+      let node = this.root;
+      for (let char of word.toLowerCase()) {
+        if (!node.children[char]) {
+          node.children[char] = new TrieNode();
+        }
+        node = node.children[char];
+      }
+      node.isEndOfWord = true;
+    }
+  
+    find(prefix) {
+      let node = this.root;
+      for (let char of prefix.toLowerCase()) {
+        if (!node.children[char]) {
+          return [];
+        }
+        node = node.children[char];
+      }
+      return this._findAllWords(node, prefix);
+    }
+  
+    _findAllWords(node, prefix) {
+      let results = [];
+      if (node.isEndOfWord) {
+        results.push(prefix);
+      }
+      for (let char in node.children) {
+        results = results.concat(
+          this._findAllWords(node.children[char], prefix + char)
+        );
+      }
+      return results;
+    }
+  }
+  
+  let trie = new Trie();
+  let states = [
+    "Strawberry Fruit Juice",
+    "Kiwi Fruit Juice",
+    "Star Apple Fruit Juice",
+    "Orange Fruit Juice",
+    "Hawaiian Grilled Salmon Fillet",
+    "Classic Shrimp",
+    "Salmon En Croute",
+    "Lobster Thermidor",
+    "All In Seafood",
+    "Shrimoy Seafood",
+    "Cry To Burger",
+    "Supreme Burger",
+    "Classic Burger",
+    "Deluxe Double Hot Beef Burger",
+    "Fruity Mango Cake",
+    "Cheo Mint Cake",
+    "Strawberry Cake",
+    "Cherry Bomb Cake",
+    "Meisan Pizza",
+    "Cheuvaury Pizza",
+    "Mholea Pizza",
+    "Chikirri Pizza",
+    "Garden Fresh Salad",
+    "Salamanders",
+    "Spicy Chickpea Wrap",
+    "Veggie Stir-fry with Tofu",
+  ];
+  
+  states.forEach((state) => trie.insert(state));
+  
+  var substringMatcher = function (trie) {
+    return function findMatches(q, cb) {
+      let matches = trie.find(q);
+      cb(matches);
+    };
+  };
+  
+  // Function to handle the selection of an item
+  function handleSelection(event, suggestion) {
+    console.log('Selected:', suggestion);
+
+    const parent = document.getElementById(suggestion)
+    const img = parent.children[0].attributes[0].value.split('/').slice(-1).pop()
     const content = parent.children[1]
     const title = content.children[0].innerHTML
     const price = content.children[1].innerHTML
@@ -1096,11 +1313,279 @@ document.querySelectorAll('.food-item').forEach(item =>{
     document.getElementById('cart-price').innerHTML = price
     
     const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalAddToCart'))
-    modal.show()
+    //modal.show()
 
+    Swal.fire({
+      title: `Do you want to add ${title}?`,
+      icon: "info",
+      showCloseButton: false,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: `Add`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        const imgURL = "{{ url_for('static', filename='REPLACE') }}".replace('REPLACE', "img/menu/"+img)
+        const el=`
+        <li>
+
+                <div class="shopping-cart">
+                 
+                  <!-- Product #1 -->
+                  <div class="item">
+                    <div class="buttons">
+                      <span class="delete-btn"></span>
+                    </div>
+                 
+                    <div class="image">
+                      <img src="${imgURL}" alt="" style="width: 80px;"  />
+                    </div>
+                 
+                    <div class="description" style="width: 200px;">
+                      <span>${title}</span>
+                    </div>
+                 
+                    <div class="quantity">
+                      
+                      <button class="minus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/minus.svg') }}" alt="" />
+                      </button>
+                      <input min="1" type="text" name="name" value="1">
+                      <button class="plus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/plus.svg') }}" alt="" />
+                      </button>
+                    </div>
+                 
+                    <div class="total-price">${price}</div>
+                  </div>
+
+              </li>
+        `
+
+        console.log(el)
+
+        const container=document.getElementById('cartContainer')
+        container.insertAdjacentHTML('afterend', el )
+
+        Swal.fire("Item added to cart", "", "success");
+      }
+    });
+    // You can add any other logic here, for example, updating the UI or storing the selection
+  }
+  
+  $(".typeahead").typeahead(
+    {
+      hint: true,
+      highlight: true,
+      minLength: 1,
+    },
+    {
+      name: "states",
+      source: substringMatcher(trie),
+    }
+  ).on('typeahead:selected', handleSelection);
+  
+
+
+// MENU ITEM
+document.querySelectorAll('.food-item').forEach(item =>{
+  item.addEventListener('click', (e) => {
+    const parent = item
+    const img = parent.children[0].attributes[0].value.split('/').slice(-1).pop()
+    const imgURL = "{{ url_for('static', filename='REPLACE') }}".replace('REPLACE', "img/menu/"+img)
+    const content = parent.children[1]
+    const title = content.children[0].innerHTML
+    const price = content.children[1].innerHTML
+
+
+    if (cartItems.length > 0) {
+      const existingItem = cartItems.find(item => item.title === title)
+      if (existingItem) {
+        return  Swal.fire("Item already in cart", "", "error");
+      }
+    }
+    cartItems.push({
+      title,
+      imgURL,
+      price
+    })
+
+    Swal.fire({
+      title: `Do you want to add ${title}?`,
+      icon: "info",
+      showCloseButton: false,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: `Add`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        
+        const el=`
+        <li id="${title}">
+                <div class="shopping-cart">
+                  <div class="item">
+
+                    <div class="buttons">
+                      <span id="${title}" class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                      <img src="${imgURL}" alt="" style="width: 80px;"  />
+                    </div>
+
+                    <div class="description" style="width: 200px;">
+                      <span>${title}</span>
+                    </div>
+
+                    <div class="quantity">
+                      <button id="${title}" class="minus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/minus.svg') }}" alt="" />
+                      </button>
+                      <input min="1" type="text" name="name" value="1">
+                      <button id="${title}" class="plus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/plus.svg') }}" alt="" />
+                      </button>
+                    </div>
+
+                    <div class="total-price">${price}</div>
+
+                  </div>
+              </li>
+        `
+
+        const container=document.getElementById('cartContainer')
+        container.insertAdjacentHTML('afterend', el )
+
+        Swal.fire("Item added to cart", "", "success");
+
+        initQtyButtons()
+        initRemoveButton(title)
+      }
+    });
+
+    
 
 })})
 
+function initQtyButtons() {
+  const btnMinusList = document.querySelectorAll('.minus-btn')
+  btnMinusList.forEach(btn => {
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      const [item] = cartItems.filter(item => item.title === e.target.id)
+    
+      if (value > 1) {
+        value = value - 1;
+          const parentContainer = document.getElementById(e.target.id) // li
+          const targetChildContainer = parentContainer.children[0].children[0].children[4]
+          const oldPrice = parseInt(item.price.replace('₱', ''));
+          const newPrice = oldPrice * value
+          targetChildContainer.innerHTML = `₱${newPrice}`          
+          $input.val(value);
+      } else {
+        Swal.fire("Quantity cannot be below 0", "", "error");
+      }
+    })
+  })
+
+
+  const btnPlusList = document.querySelectorAll('.plus-btn')
+  btnPlusList.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      var $input = $this.closest('div').find('input');
+      var value = parseInt($input.val());
+
+      const [item] = cartItems.filter(item => item.title === e.target.id)
+    
+      if (value < 100) {
+        value = value + 1;
+
+        const parentContainer = document.getElementById(e.target.id) // li
+          const targetChildContainer = parentContainer.children[0].children[0].children[4]
+          const oldPrice = parseInt(item.price.replace('₱', ''));
+          const newPrice = oldPrice * value
+          targetChildContainer.innerHTML = `₱${newPrice}`
+        
+        $input.val(value);
+    } else {
+      Swal.fire("Max quantity reached!", "", "error");
+    }
+    
+      
+    })
+  })
+}
+
+
+function initRemoveButton() {
+  const btnMinusList = document.querySelectorAll('.delete-btn')
+  btnMinusList.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      debugger
+      const newCart = cartItems.filter(item => item.title !==  e.target.id)
+
+      const container=document.getElementById('cartContainer')
+      const parentContainer =  container.parentNode
+      const parentChildren = Array.from(parentContainer.children)
+      parentChildren.forEach(child => {
+        if (child !== container) {
+            parentContainer.removeChild(child);
+        }
+    });
+
+      newCart.forEach(item => {
+        let el =  `
+        <li id="${item.title}">
+                <div class="shopping-cart">
+                  <div class="item">
+
+                    <div class="buttons">
+                      <span class="delete-btn"></span>
+                    </div>
+
+                    <div class="image">
+                      <img src="${item.imgURL}" alt="" style="width: 80px;"  />
+                    </div>
+
+                    <div class="description" style="width: 200px;">
+                      <span>${item.title}</span>
+                    </div>
+
+                    <div class="quantity">
+                      <button class="plus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/plus.svg') }}" alt="" />
+                      </button>
+                      <input min="1" type="text" name="name" value="1">
+                      <button class="minus-btn" type="button" name="button">
+                        <img src="{{ url_for('static', filename='img/minus.svg') }}" alt="" />
+                      </button>
+                    </div>
+
+                    <div class="total-price">${item.price}</div>
+
+                  </div>
+              </li>
+        `
+
+        container.insertAdjacentHTML('afterend', el )
+
+        initQtyButtons()
+        initRemoveButton()
+      })
+        
+    })
+  })   
+}
+
+})
 </script>
 
 {% endblock %}

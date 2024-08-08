@@ -139,7 +139,7 @@ def login():
     user = collection_user.find_one({"email": email})
     if user is not None:
         if password == user["password"]:
-            session["user"] = user['username']
+            session["user"] = user["username"]
             return jsonify({"message": "Login Success!!"}), 200
         else:
             return jsonify({"message": "!! Incorrect password !!"}), 401
@@ -147,10 +147,12 @@ def login():
     else:
         return jsonify({"message": "This user is not found"}), 404
 
+
 @app.route("/logout")
 def logout():
     session.clear()
     return "ok", 200
+
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -161,7 +163,9 @@ def register():
 
     user = collection_user.find_one({"email": email})
     if user is None:
-        collection_user.insert_one({"email": email, "username": username, "password": password})
+        collection_user.insert_one(
+            {"email": email, "username": username, "password": password}
+        )
         return jsonify({"message": "Already Created!! please login"}), 200
 
     else:
